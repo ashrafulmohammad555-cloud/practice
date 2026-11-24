@@ -40,6 +40,7 @@
             let rollno = document.getElementById("rollno").value;
             let branch = document.getElementById("branch").value;
             let phno = document.getElementById("phno").value;
+	    let aphno=document.getElementById("aphno").value;
             let email = document.getElementById("email").value;
 
             if (fname === "") {
@@ -62,8 +63,12 @@
                 return false;
             }
 
-            if (!/^\d{10}$/.test(phno)) {
+            if (phno.length!==10) {
                 alert("Enter valid 10 digit phone number");
+                return false;
+            }
+	if (aphno.length!==10) {
+                alert("Enter valid 10 digit alternate phone number");
                 return false;
             }
 
@@ -100,6 +105,11 @@
 
             Phone Number:
             <input type="text" id="phno">
+
+	    Alternate Phone Number:
+            <input type="text" id="aphno">
+
+ 
 
             Email:
             <input type="text" id="email">
