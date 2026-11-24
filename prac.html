@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+        }
+          h2 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        .container {
+            width: 350px;
+            margin: 50px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 10px;
+          
+        }
+
+        input {
+            width: 100%;
+	    margin: 8px 0 15px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        
+    </style>
+
+    <script>
+        function val() {
+
+            let fname = document.getElementById("fname").value;
+            let lname = document.getElementById("lname").value;
+            let rollno = document.getElementById("rollno").value;
+            let branch = document.getElementById("branch").value;
+            let phno = document.getElementById("phno").value;
+            let email = document.getElementById("email").value;
+
+            if (fname === "") {
+                alert("First name field empty");
+                return false;
+            }
+
+            if (lname === "") {
+                alert("Last name field empty");
+                return false;
+            }
+
+            if (rollno === "") {
+                alert("Roll number field empty");
+                return false;
+            }
+
+            if (branch === "") {
+                alert("Branch field empty");
+                return false;
+            }
+
+            if (!/^\d{10}$/.test(phno)) {
+                alert("Enter valid 10 digit phone number");
+                return false;
+            }
+
+            if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+                alert("Enter valid email");
+                return false;
+            }
+
+            alert("Registration successful");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Student Registration</h2>
+
+        <form onsubmit="return val()">
+
+            First Name:
+            <input type="text" id="fname">
+
+            Last Name:
+            <input type="text" id="lname">
+
+            Roll Number:
+            <input type="text" id="rollno">
+
+            Branch:
+            <input type="text" id="branch">
+
+            Phone Number:
+            <input type="text" id="phno">
+
+            Email:
+            <input type="text" id="email">
+
+            <input type="submit" value="Register">
+
+        </form>
+
+    </div>
+
+</body>
+</html>
